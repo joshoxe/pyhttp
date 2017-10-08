@@ -1,4 +1,4 @@
-from method import Method_Enum
+from method import MethodEnum
 
 class Response():
     def __init__(self, server):
@@ -6,7 +6,7 @@ class Response():
 
     def handle_response(self, packet, addr):
         method = packet.split(' ', 1)[0]
-        for e in Method_Enum:
+        for e in MethodEnum:
             if method == e.name:
                 func = getattr(self, method.lower())
                 func(addr)

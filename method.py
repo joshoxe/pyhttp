@@ -1,4 +1,4 @@
 from enum import Enum
 
-class Method_Enum(Enum):
+class MethodEnum(Enum):
     GET = 1

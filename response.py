@@ -1,4 +1,4 @@
 from enum import Enum
 
-class Response_Enum(Enum):
+class ResponseEnum(Enum):
     OK = 200
