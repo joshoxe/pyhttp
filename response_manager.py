@@ -1,6 +1,5 @@
-import datetime, resource_handler, collections
+import datetime, resource_handler, collections, response
 from method import MethodEnum
-from response import ResponseEnum
 from wsgiref.handlers import format_date_time
 from time import mktime
 
@@ -9,6 +8,7 @@ class Response():
         self.server = server
         self.struct = collections.namedtuple('data', ('method', 'path'))
         self.resource = resource_handler.Resource()
+        self.response_codes = response.ResponseCodes().respone
 
     def handle_response(self, packet, addr):
         # TODO: All kinds of error handling
