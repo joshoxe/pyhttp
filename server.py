@@ -19,9 +19,9 @@ class Server:
                 self.add_connection(conn, addr)
                 with conn:
                     try:
-                    packet = conn.recv(1024).decode('utf-8')
-                    print("RECV:\r\n{}".format(packet))
-                    manager.handle_response(packet, addr)
+                        packet = conn.recv(1024).decode('utf-8')
+                        print("RECV:\r\n{}".format(packet))
+                        manager.handle_response(packet, addr)
                     except Exception as e:
                         print(e)
                         self.send_to_connection(addr, "{} 500 Internal Server Error\r\n{}\r\n{}".format(self.http_version, self.current_date(), self.server_name))
